@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Free web 2d game, play and listen electro and rock  music">
+    <meta name="keywords" content="Electro and rock music, 2d-game">
+    <meta name="author" content="Pavel Ekishev">
+    <title>Electro rock - game</title>
+    <link rel="stylesheet" href="css.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"> 
+</head>
+<body>
+    <div id="contentContainer">
+        <div id="container">
+            <div class="startGameContainer">
+                <div class="startGame" onclick="createGame()">
+                      Press <br>
+                      Start
+                </div>
+            </div>
+            <audio src="" contols="" type="audio/mpeg" id="audioPlayer"></audio>
+            <div class="list_of_music">
+                <form id="demo">
+                    <input type="radio" id="a1" name="music" value="1" checked>
+                    <label for="listOfMusic" id="song1">Mick Gordon - BFG Division</label>
+                    <input type="radio" id="a2" name="music" value="2">
+                    <label for="listOfMusic" id="song2">Hyper - Spoiler</label>
+                    <input type="radio" id="a3" name="music" value="3">
+                    <label for="listOfMusic" id="song3">Moon - Quixotic</label>
+                    <input type="radio" id="a4" name="music" value="4">
+                    <label for="listOfMusic" id="song4">Anna Remix - Singularity</label>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="containerPic">
+        <img src="/prace4/159180864987726907.jpg">
+    </div>
+    <div class="containerPic2">
+        <img src="/prace4/159180864987726907.jpg" style="transform: scale(-1,1);">
+    </div>
+</body>
+<script src="/prace4/javascript.js"></script>
+<script>
+    const inputArray = document.querySelectorAll('input');
+    inputArray.forEach(function(elem){
+        elem.addEventListener('click',playSong)
+    });
+</script>
+</html>

@@ -1,0 +1,180 @@
+*{
+    margin:5px;
+    padding:5px;
+    color:red;
+}
+body{
+    background: #313234;
+    display: flex;
+    margin-top: 5%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#container{
+    display: flex;
+    order:2;
+    width: 700px;
+    height: 540px;
+    position: relative;
+    box-shadow: 0px 20px 5px 85px rgba(0,0,0,0.80);
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    z-index: 1;
+}
+#contentContainer{ 
+    position: relative;
+    width: 648px;
+    height: 560px;
+    display:flex;
+    flex-direction: row;
+    order:2;
+    z-index: 1;
+    
+    
+} */
+.startGameContainer{
+    display: flex;
+    position: relative;
+    width: 370px;
+    height: 300px;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.list_of_music{
+    display:flex;
+    position: relative;
+    width: 200px;
+    height: 480px;
+}
+.startGame{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 54px;
+    color:#faff1f;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    animation: pulse 4s infinite;
+    text-decoration: none;
+}
+.containerPic{
+    display: flex;
+    order:3;
+    width: 270px;
+    height: 550px;
+    left:60px;
+    overflow: hidden;
+    position: relative; 
+    z-index: 1;
+}
+.containerPic2{
+    display: flex;
+    order:1;
+    width: 270px;
+    height: 550px;
+    right:60px;
+    position: relative; 
+    z-index: 1;
+}
+img{
+    position: relative;
+    display: flex;
+    width: 250px;
+    height: 550px;
+}
+#a1{
+    position: absolute;
+    top:95px;
+    left:5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+#song1{
+    position: absolute;
+    top:80px;
+    margin-left: 30px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #f5f5f5;
+    text-shadow: 0px -2px 2px #fff, 0px -2px 10px rgb(233, 233, 38), 0px -2px 20px rgb(211, 127, 0), 0px -1px 25px rgb(253, 0, 0);
+}
+#a2{
+    position: absolute;
+    top:165px;
+    left:5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+#song2{
+    position: absolute;
+    top:160px;
+    left:35px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #f5f5f5;
+    text-shadow:  0px -2px 2px #fff, 0px -2px 10px rgb(233, 233, 38), 0px -2px 20px rgb(211, 127, 0), 0px -1px 25px rgb(253, 0, 0);
+}
+#a3{
+    position: absolute;
+    top:245px;
+    left:5px;
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+#song3{
+    position: absolute;
+    top:240px;
+    left:35px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #f5f5f5;
+    text-shadow:  0px -2px 2px #fff, 0px -2px 10px rgb(233, 233, 38), 0px -2px 20px rgb(211, 127, 0), 0px -1px 25px rgb(253, 0, 0);
+}
+#a4{
+    position: absolute;
+    top:335px;
+    left:5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+#song4{
+    position: absolute;
+    top:320px;
+    left:35px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #f5f5f5;
+    text-shadow:  0px -2px 2px #fff, 0px -2px 10px rgb(233, 233, 38), 0px -2px 20px rgb(211, 127, 0), 0px -1px 25px rgb(253, 0, 0);
+}
+
+/* #audioPlayer{
+    position: absolute;
+    text-decoration: none;
+    top:300px;
+    left:15px;
+    width: 250px;
+    overflow: hidden;
+} */
+
+@keyframes pulse {
+    0% {
+        color: #faff1f;
+    }
+    50% {
+        color:black;
+    }
+    75%
+    {
+        color:red;
+    }
+}
