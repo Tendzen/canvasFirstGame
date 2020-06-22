@@ -1,7 +1,7 @@
 *{
     margin:5px;
     padding:5px;
-    color:red;
+    
 }
 body{
     background: #313234;
@@ -9,6 +9,7 @@ body{
     margin-top: 5%;
     flex-direction: row;
     justify-content: space-around;
+    
 }
 #container{
     display: flex;
@@ -20,8 +21,10 @@ body{
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: flex-start;
-    z-index: 1;
+    z-index: 1; 
+   
 }
+
 #contentContainer{ 
     position: relative;
     width: 648px;
@@ -29,9 +32,8 @@ body{
     display:flex;
     flex-direction: row;
     order:2;
-    z-index: 1;
-    
-    
+    flex-grow:3;
+    flex-shrink: 1;
 } */
 .startGameContainer{
     display: flex;
@@ -63,19 +65,20 @@ body{
     order:3;
     width: 270px;
     height: 550px;
-    left:60px;
     overflow: hidden;
     position: relative; 
-    z-index: 1;
+    flex-grow: 2;
+    flex-shrink: 1;
+   
 }
 .containerPic2{
     display: flex;
     order:1;
     width: 270px;
     height: 550px;
-    right:60px;
     position: relative; 
-    z-index: 1;
+    flex-grow: 3;
+    flex-shrink: 2;
 }
 img{
     position: relative;
