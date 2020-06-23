@@ -1,7 +1,7 @@
 "use strict";
 
 function playSong(){
-const playlist = new Array('/prace4/musicForWebGame/doomBFG.mp3', '/prace4/musicForWebGame/hyper.mp3', '/prace4/musicForWebGame/Quixotic.mp3', '/prace4/musicForWebGame/singularity.mp3');
+const playlist = new Array('/musicForWebGame/doomBFG.mp3', '/musicForWebGame/hyper.mp3', '/musicForWebGame/Quixotic.mp3', '/musicForWebGame/singularity.mp3');
 const form = document.forms.demo;
 const radios = form.elements.music;
 const value = radios.value;
