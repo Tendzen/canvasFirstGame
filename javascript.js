@@ -9,7 +9,7 @@ const audioPlayer = document.getElementById("audioPlayer");
 switch(value){
     case "1":
         audioPlayer.src=playlist[0];
-        audioPlayer.volume = 0;
+        audioPlayer.volume = 0.6;
         audioPlayer.play();
         break;
     case "2":
