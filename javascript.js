@@ -1,7 +1,7 @@
 "use strict";
 
 const audioPlayer = document.getElementById("audioPlayer");
-const playlist = new Array('/prace4/musicForWebGame/doomBFG.mp3', '/prace4/musicForWebGame/hyper.mp3', '/prace4/musicForWebGame/Quixotic.mp3', '/prace4/musicForWebGame/singularity.mp3');
+const playlist = new Array('musicForWebGame/doomBFG.mp3', 'musicForWebGame/hyper.mp3', 'musicForWebGame/Quixotic.mp3', 'musicForWebGame/singularity.mp3');
 
 function playSong(){
 const form = document.forms.demo;
