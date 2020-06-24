@@ -349,7 +349,7 @@ function checkKey(e) {
 
 let timerId = setTimeout(function lowerVolume(){
     audioPlayer.volume /= 2;
-    timerId = setTimeout(lowerVolume,4000);
+    timerId = setTimeout(lowerVolume,6000);
 },2000);
 
 
