@@ -1,5 +1,20 @@
 "use strict";
+let exit;
+let scoreName;
+let eatednote=0;
+let note = [];
+let controlledObject = {
+    score: [],
+    eatNotes(note){
+        this.score = [note];
+    }
+};
 
+let player = {
+    __proto__: controlledObject,
+    score:[]
+};
+let mySound;
 const audioPlayer = document.getElementById("audioPlayer");
 const playlist = new Array('musicForWebGame/doomBFG.mp3', 'musicForWebGame/hyper.mp3', 'musicForWebGame/Quixotic.mp3', 'musicForWebGame/singularity.mp3');
 audioPlayer.src = playlist[0];
@@ -32,28 +47,10 @@ switch(value){
         break;
 }
 }
-
-let exit;
-let scoreName;
-let note = [];
-let controlledObject = {
-    score: [],
-    eatNotes(note){
-        this.score = [note];
-    }
-};
-
-let player = {
-    __proto__: controlledObject,
-    score:[]
-};
-let mySound;
-
-
 function createGame(){
     audioPlayer.pause();
     document.getElementById("container").style.bottom ="5000px";
-    exit = new component("60px","Consolas","red",460,80,"text");
+    exit = new component("60px","Consolas","red",innerWidth-160,80,"text");
     scoreName = new component("50px","Consolas","red",10,80,"text");
     player = new component(70, 70, "red", 205,220,"object");
     mySound = new sound(audioPlayer.src);
@@ -102,8 +99,8 @@ function sound(src) {
 let myGameZone = {
     canvas: document.createElement('canvas'),
     start: function(){
-        this.canvas.width = 628;
-        this.canvas.height =900;
+        this.canvas.width = innerWidth;
+        this.canvas.height = innerHeight;
         this.canvas.style.border = "2px solid black";
         this.canvas.style.backgroundColor = "#090a0a";
         this.canvas.id = "canvas";
@@ -131,7 +128,8 @@ let myGameZone = {
     }
 };  
 
-let eated = false;
+
+let isStandingOnNote = false;
 
 function component (width, height, color, x, y, type){
         this.type = type;
@@ -177,11 +175,11 @@ function component (width, height, color, x, y, type){
         this.x += this.speedX;
         this.y += this.speedY;
     }
-    this.clicked = function(){
-        let left = 870;
-        let right = 1000;
-        let top = 130;
-        let bottom = 160;
+    this.clicked = function(){ // переделать под exit  responsive
+        let left = 661;
+        let right = 759;
+        let top = 114;
+        let bottom = 146;
         let clicked = true;
         if ((bottom < myGameZone.y) || (top > myGameZone.y) || (right < myGameZone.x) || (left > myGameZone.x)){
             clicked = false;
@@ -190,7 +188,7 @@ function component (width, height, color, x, y, type){
         
     }
 
-    this.isOnNote = function(otherObj){
+    this.isOnNote = function(otherObj){        
         let myLeft = this.x;
         let myRight = this.x + (this.width);
         let myTop = this.y;
@@ -199,13 +197,11 @@ function component (width, height, color, x, y, type){
         let otherRight = otherObj.x + (otherObj.width);
         let otherTop = otherObj.y;
         let otherBottom = otherObj.y + (otherObj.height);
+        isStandingOnNote = true;
         if ((myBottom < otherTop) || (myTop > otherBottom) || (myRight < otherLeft) || (myLeft > otherRight)) {
-            eated = false;
+            isStandingOnNote = false;
         }
-        else{
-            eated = true;
-        }
-        return eated;
+        return isStandingOnNote;
         
     }
 
@@ -221,8 +217,6 @@ function component (width, height, color, x, y, type){
     }
 
 function updateGameZone() {
-    console.log(eated);
-    let eatednote=0;
     if(myGameZone.x && myGameZone.y){
         if(exit.clicked()){
             myGameZone.clear();
@@ -237,9 +231,8 @@ function updateGameZone() {
         if(player.isOnNote(note[i])){
             note[i].deleteComponent();
             eatednote++;
-            eated = false;
-            console.log(mySound.sound.volume);
-
+            note.splice(i,1);
+            console.log(note);
         }
     }
     myGameZone.clear();
@@ -267,9 +260,9 @@ function everyinterval(n) {
     return false;
 }
 function upVolume(){
-    console.log(eated);
-    if(eated = true){
-        console.log(eated);
+    console.log(isStandingOnNote);
+    if(isStandingOnNote){
+        console.log(isStandingOnNote);
     }
 }
 
@@ -317,6 +310,9 @@ function getPosition(e) {
     var y = getPosition(e).y;
     console.log("x pos: "+ x +" // y pos:"+ y);
   });
+
+
+
 
 
 
